@@ -1,10 +1,13 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
 @layer base {
   :root {
-    --background: 0 0% 100%;
+    --background: 210 50% 98%;
     --foreground: 222.2 84% 4.9%;
 
     --card: 0 0% 100%;
@@ -13,7 +16,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 222.2 47.4% 11.2%;
+    --primary: 211 100% 50%;
     --primary-foreground: 210 40% 98%;
 
     --secondary: 210 40% 96.1%;
@@ -32,23 +35,7 @@
     --input: 214.3 31.8% 91.4%;
     --ring: 222.2 84% 4.9%;
 
-    --radius: 0.5rem;
-
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --radius: 0.75rem;
   }
 
   .dark {
@@ -79,14 +66,6 @@
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
     --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
   }
 }
 
@@ -94,8 +73,176 @@
   * {
     @apply border-border;
   }
-
-  body {
-    @apply bg-background text-foreground;
+  
+  html {
+    @apply scroll-smooth;
+    font-family: 'Inter', sans-serif;
   }
+  
+  body {
+    @apply bg-background text-foreground antialiased overflow-x-hidden;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight;
+  }
+  
+  h1 {
+    @apply text-3xl sm:text-4xl md:text-5xl;
+  }
+  
+  h2 {
+    @apply text-2xl sm:text-3xl md:text-4xl;
+  }
+  
+  h3 {
+    @apply text-xl sm:text-2xl md:text-3xl;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/80 backdrop-blur-md border border-white/20 shadow-glass rounded-xl;
+  }
+  
+  .aqua-button {
+    @apply bg-aqua-blue hover:bg-aqua-darkblue text-white font-medium py-3 px-6 rounded-full 
+           shadow-button transition-all duration-300 transform hover:-translate-y-1 
+           focus:outline-none focus:ring-2 focus:ring-aqua-blue focus:ring-opacity-50;
+  }
+  
+  .aqua-button-red {
+    @apply bg-aqua-red hover:bg-red-600 text-white font-medium py-3 px-6 rounded-full 
+           shadow-button transition-all duration-300 transform hover:-translate-y-1 
+           focus:outline-none focus:ring-2 focus:ring-aqua-red focus:ring-opacity-50;
+  }
+  
+  .highlight-text {
+    @apply relative inline-block;
+  }
+  
+  .highlight-text::after {
+    @apply content-[''] absolute -bottom-1 left-0 w-full h-[6px] bg-aqua-lightblue/30 -z-10 rounded-sm;
+  }
+  
+  .section {
+    @apply py-12 md:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto;
+  }
+  
+  .fade-in-section {
+    @apply opacity-0 translate-y-10 transition-all duration-700 ease-out;
+  }
+  
+  .fade-in-section.is-visible {
+    @apply opacity-100 translate-y-0;
+  }
+}
+
+.animate-flow-bg {
+  background-size: 200% 200%;
+  animation: flow 3s ease infinite;
+}
+
+.countdown-item {
+  @apply flex flex-col items-center justify-center bg-white rounded-lg shadow-elegant px-2 py-1 sm:px-4 sm:py-2;
+}
+
+.count-value {
+  @apply text-xl sm:text-3xl md:text-4xl font-bold text-aqua-blue;
+}
+
+.count-label {
+  @apply text-xs sm:text-sm text-aqua-gray uppercase;
+}
+
+.video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+  height: 0;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 20px 80px -20px rgba(0, 0, 0, 0.15);
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.testimonial-card {
+  @apply glass-card p-6 transition-all duration-300 hover:shadow-float;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #0A84FF;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0055B3;
+}
+
+.text-gradient {
+  @apply bg-clip-text text-transparent bg-blue-gradient;
+}
+
+/* Water drop animation */
+.water-drop {
+  @apply relative inline-block;
+}
+
+.water-drop::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 15px;
+  height: 15px;
+  background-color: #5AC8FA;
+  border-radius: 50%;
+  animation: drop 2s ease-in infinite;
+}
+
+@keyframes drop {
+  0% {
+    top: -10px;
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    top: 100%;
+    opacity: 0;
+  }
+}
+
+/* Lazy load blur effect */
+.blur-load {
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.blur-load.loaded > img {
+  opacity: 1;
+}
+
+.blur-load > img {
+  opacity: 0;
+  transition: opacity 200ms ease-in-out;
 }
