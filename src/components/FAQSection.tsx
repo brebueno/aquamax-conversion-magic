@@ -1,11 +1,10 @@
-
 import React, { useRef, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Plus, Minus } from 'lucide-react';
 
 const FAQSection = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, threshold: 0.1 });
+  const isInView = useInView(ref, { once: true, amount: 0.1 });
   
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   

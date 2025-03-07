@@ -1,16 +1,12 @@
-
 import React, { useEffect, useRef, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Play } from 'lucide-react';
 
 const VideoSection = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, threshold: 0.3 });
+  const isInView = useInView(ref, { once: true, amount: 0.3 });
   const [isPlaying, setIsPlaying] = useState(false);
   const videoPlaceholder = "/video-placeholder.jpg";
-  
-  // For actual implementation, replace this with an embed from YouTube or Vimeo
-  // This is just a placeholder with play functionality
   
   return (
     <section 

@@ -5,7 +5,7 @@ import { ShoppingCart } from 'lucide-react';
 
 const CTABanner = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, threshold: 0.3 });
+  const isInView = useInView(ref, { once: true, amount: 0.3 });
   
   return (
     <section 

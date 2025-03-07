@@ -1,11 +1,10 @@
-
 import React, { useState, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Calculator } from 'lucide-react';
 
 const SavingsCalculator = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, threshold: 0.1 });
+  const isInView = useInView(ref, { once: true, amount: 0.1 });
   const [currentBill, setCurrentBill] = useState('');
   const [savings, setSavings] = useState<number | null>(null);
   const [isCalculated, setIsCalculated] = useState(false);

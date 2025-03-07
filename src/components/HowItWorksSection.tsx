@@ -1,11 +1,10 @@
-
 import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Droplets, Ban, Clock, BarChart } from 'lucide-react';
 
 const HowItWorksSection = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, threshold: 0.1 });
+  const isInView = useInView(ref, { once: true, amount: 0.1 });
   
   const features = [
     {

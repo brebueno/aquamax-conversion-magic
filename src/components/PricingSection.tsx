@@ -1,11 +1,10 @@
-
 import React, { useRef, useState, useEffect } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Check, ShoppingCart, Clock, Shield, PercentCircle } from 'lucide-react';
 
 const PricingSection = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, threshold: 0.1 });
+  const isInView = useInView(ref, { once: true, amount: 0.1 });
   
   // Countdown timer
   const [timeLeft, setTimeLeft] = useState({
@@ -215,3 +214,4 @@ const PricingSection = () => {
 };
 
 export default PricingSection;
+
