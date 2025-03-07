@@ -1,7 +1,5 @@
-
 import React, { useEffect } from "react";
 import { motion } from "framer-motion";
-import Navbar from "../components/Navbar";
 import HeroSection from "../components/HeroSection";
 import VideoSection from "../components/VideoSection";
 import HowItWorksSection from "../components/HowItWorksSection";
@@ -42,7 +40,6 @@ const Index = () => {
       transition={{ duration: 0.6 }}
       className="overflow-hidden"
     >
-      <Navbar />
       <HeroSection />
       <VideoSection />
       <HowItWorksSection />

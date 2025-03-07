@@ -1,6 +1,7 @@
+
 import React, { useRef, useState, useEffect } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { Check, ShoppingCart, Clock, Shield, PercentCircle } from 'lucide-react';
+import { Check, ShoppingCart, Clock, Shield, PercentCircle, AlertTriangle, Gift } from 'lucide-react';
 
 const PricingSection = () => {
   const ref = useRef(null);
@@ -54,13 +55,13 @@ const PricingSection = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
-          <div className="inline-block bg-aqua-red/10 backdrop-blur-sm px-4 py-1 rounded-full mb-4">
-            <span className="text-aqua-red font-medium text-sm flex items-center justify-center">
-              <PercentCircle className="mr-1" size={16} />
-              Últimas 50 unidades com 67% OFF!
+          <div className="inline-block bg-red-600 text-white px-6 py-2 rounded-full mb-4 animate-pulse">
+            <span className="font-bold text-sm flex items-center justify-center">
+              <AlertTriangle className="mr-1" size={16} />
+              ÚLTIMAS 50 UNIDADES COM 67% OFF!
             </span>
           </div>
-          <h2 className="font-bold text-aqua-darkgray mb-4">
+          <h2 className="font-bold text-3xl sm:text-4xl text-aqua-darkgray mb-4">
             Garanta o Seu Aquamax Hoje
           </h2>
           <p className="text-aqua-gray text-xl max-w-3xl mx-auto">
@@ -97,15 +98,15 @@ const PricingSection = () => {
             initial={{ opacity: 0, x: -20 }}
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="glass-card p-8"
+            className="glass-card p-8 border-2 border-transparent hover:border-blue-400 transition-all duration-300"
           >
-            <div className="bg-aqua-blue text-white text-sm font-medium px-4 py-1 rounded-full inline-block mb-6">
+            <div className="bg-blue-600 text-white text-sm font-bold px-4 py-1 rounded-full inline-block mb-6">
               Oferta Individual
             </div>
             
             <div className="flex items-end gap-3 mb-6">
               <div className="text-aqua-gray line-through text-lg">De R$ 297,00</div>
-              <div className="text-aqua-darkgray text-4xl font-bold">R$ 97,90</div>
+              <div className="text-aqua-darkgray text-4xl font-bold">R$ 119,90</div>
             </div>
             
             <div className="mb-8">
@@ -120,9 +121,9 @@ const PricingSection = () => {
               </ul>
             </div>
             
-            <button className="aqua-button w-full text-lg mb-4 flex items-center justify-center">
+            <button className="bg-blue-600 hover:bg-blue-700 text-white w-full text-lg py-4 px-6 rounded-full font-bold shadow-lg transition-all duration-300 transform hover:scale-105 mb-4 flex items-center justify-center">
               <ShoppingCart className="mr-2" size={20} />
-              Comprar Agora
+              COMPRAR AGORA
             </button>
             
             <p className="text-aqua-gray text-sm text-center">
@@ -134,19 +135,19 @@ const PricingSection = () => {
             initial={{ opacity: 0, x: 20 }}
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 20 }}
             transition={{ duration: 0.5, delay: 0.5 }}
-            className="glass-card p-8 relative overflow-hidden border-2 border-aqua-blue"
+            className="glass-card p-8 relative overflow-hidden border-2 border-red-600 transform hover:scale-105 transition-all duration-300"
           >
-            <div className="absolute -right-12 top-7 bg-aqua-red text-white text-sm font-bold px-16 py-1 transform rotate-45">
+            <div className="absolute -right-12 top-7 bg-red-600 text-white text-sm font-bold px-16 py-1 transform rotate-45">
               MELHOR OFERTA
             </div>
             
-            <div className="bg-aqua-blue text-white text-sm font-medium px-4 py-1 rounded-full inline-block mb-6">
+            <div className="bg-red-600 text-white text-sm font-bold px-4 py-1 rounded-full inline-block mb-6">
               Kit Economia Total
             </div>
             
             <div className="flex items-end gap-3 mb-6">
               <div className="text-aqua-gray line-through text-lg">De R$ 447,00</div>
-              <div className="text-aqua-darkgray text-4xl font-bold">R$ 147,90</div>
+              <div className="text-aqua-darkgray text-4xl font-bold">R$ 179,80</div>
             </div>
             
             <div className="mb-8">
@@ -163,19 +164,23 @@ const PricingSection = () => {
                   <span className="text-aqua-darkgray font-medium">2 unidades do Aquamax</span>
                 </li>
                 <li className="flex items-start">
-                  <Check className="text-green-500 mr-2 mt-1 flex-shrink-0" size={18} />
-                  <span className="text-aqua-darkgray font-medium">Filtro Anti-Vazamento GRÁTIS</span>
+                  <Gift className="text-red-600 mr-2 mt-1 flex-shrink-0" size={18} />
+                  <span className="text-red-600 font-medium">Filtro Anti-Vazamento GRÁTIS</span>
                 </li>
                 <li className="flex items-start">
-                  <Check className="text-green-500 mr-2 mt-1 flex-shrink-0" size={18} />
-                  <span className="text-aqua-darkgray font-medium">Guia "Como Reduzir Sua Conta em 7 Dias"</span>
+                  <Gift className="text-red-600 mr-2 mt-1 flex-shrink-0" size={18} />
+                  <span className="text-red-600 font-medium">Guia "Como Reduzir Sua Conta em 7 Dias"</span>
                 </li>
               </ul>
             </div>
             
-            <button className="aqua-button-red w-full text-lg mb-4 flex items-center justify-center">
+            <div className="bg-yellow-100 border border-yellow-300 p-3 rounded-lg mb-6 text-center">
+              <span className="text-yellow-800 font-medium">🔥 Economize R$ 60,00 nesta oferta! 🔥</span>
+            </div>
+            
+            <button className="bg-red-600 hover:bg-red-700 text-white w-full text-lg py-4 px-6 rounded-full font-bold shadow-xl transition-all duration-300 mb-4 flex items-center justify-center animate-pulse">
               <ShoppingCart className="mr-2" size={20} />
-              Comprar Kit Economia
+              COMPRAR KIT ECONOMIA
             </button>
             
             <p className="text-aqua-gray text-sm text-center">
@@ -191,9 +196,9 @@ const PricingSection = () => {
           className="mt-12 flex flex-col md:flex-row items-center justify-center gap-8 text-center glass-card p-6"
         >
           <div className="flex items-center gap-3">
-            <Clock className="text-aqua-blue" size={32} />
+            <Clock className="text-red-600" size={32} />
             <div className="text-left">
-              <h4 className="font-medium text-aqua-darkgray">Oferta por tempo limitado</h4>
+              <h4 className="font-bold text-aqua-darkgray">Oferta por tempo limitado</h4>
               <p className="text-aqua-gray text-sm">Válida até o fim do estoque</p>
             </div>
           </div>
@@ -201,9 +206,9 @@ const PricingSection = () => {
           <div className="h-10 w-px bg-aqua-lightgray/70 hidden md:block"></div>
           
           <div className="flex items-center gap-3">
-            <Shield className="text-aqua-blue" size={32} />
+            <Shield className="text-red-600" size={32} />
             <div className="text-left">
-              <h4 className="font-medium text-aqua-darkgray">Garantia de 30 dias</h4>
+              <h4 className="font-bold text-aqua-darkgray">Garantia de 30 dias</h4>
               <p className="text-aqua-gray text-sm">Ou 200% do seu dinheiro de volta</p>
             </div>
           </div>
@@ -214,4 +219,3 @@ const PricingSection = () => {
 };
 
 export default PricingSection;
-
