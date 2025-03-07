@@ -158,6 +158,16 @@ const PricingSection = () => {
               <div className="text-aqua-darkgray text-4xl font-bold">R$ 179,80</div>
             </div>
             
+            {/* Added image */}
+            <div className="mb-6 bg-blue-50 p-3 rounded-lg border border-blue-200">
+              <img 
+                src="/como-funciona-2.png" 
+                alt="Como funciona o Aquamax" 
+                className="w-full h-auto rounded-md shadow-sm"
+              />
+              <p className="text-center text-blue-700 font-medium mt-2 text-sm">Veja como o Aquamax funciona</p>
+            </div>
+            
             <div className="mb-8">
               <h3 className="text-xl font-semibold text-aqua-darkgray mb-4">O que você recebe:</h3>
               <ul className="space-y-3">
