@@ -13,7 +13,8 @@ const HeroSection = () => {
     >
       <div className="absolute inset-0 -z-10">
         <div className="absolute inset-0 bg-gradient-to-b from-blue-50 to-white" />
-        <div className="absolute top-0 left-0 right-0 h-32 bg-aqua-blue opacity-5 transform -skew-y-6" />
+        <div className="absolute top-0 left-0 right-0 h-60 bg-aqua-lightblue opacity-10 transform -skew-y-6" />
+        <div className="absolute bottom-0 right-0 left-0 h-40 bg-cyan-500 opacity-5 transform skew-y-6" />
       </div>
       
       <motion.div
@@ -22,12 +23,12 @@ const HeroSection = () => {
         transition={{ delay: 0.2, duration: 0.7 }}
         className="max-w-4xl mx-auto text-center"
       >
-        <div className="inline-block bg-red-600 text-white text-sm font-bold px-4 py-2 rounded-full mb-8 animate-pulse">
+        <div className="inline-block bg-blue-600 text-white text-sm font-bold px-4 py-2 rounded-full mb-8 animate-pulse">
           ATENÇÃO: Últimas unidades em promoção!
         </div>
         
         <h1 className="font-bold text-aqua-darkgray text-4xl sm:text-5xl md:text-6xl leading-tight mb-6">
-          <span className="text-red-600 font-bold">VOCÊ ESTÁ PAGANDO POR AR</span> na sua conta de água
+          <span className="text-blue-600 font-bold">VOCÊ ESTÁ PAGANDO POR AR</span> na sua conta de água
         </h1>
         
         <motion.p 
@@ -36,7 +37,7 @@ const HeroSection = () => {
           transition={{ delay: 0.4, duration: 0.7 }}
           className="text-xl sm:text-2xl font-medium text-aqua-darkgray mb-8 max-w-3xl mx-auto"
         >
-          O <span className="highlight-text font-semibold">Bloqueador de Ar Aquamax</span> bloqueia essa cobrança e reduz sua conta em até <span className="text-red-600 font-bold">60%</span> em 2 meses!
+          O <span className="highlight-text font-semibold">Bloqueador de Ar Aquamax</span> bloqueia essa cobrança e reduz sua conta em até <span className="text-blue-600 font-bold">60%</span> em 2 meses!
         </motion.p>
         
         <div className="flex flex-wrap justify-center gap-4 mt-8 mb-12">
@@ -46,10 +47,10 @@ const HeroSection = () => {
             transition={{ delay: 0.6, duration: 0.7 }}
             className="relative"
           >
-            <span className="absolute -top-4 -right-4 bg-red-600 text-white text-xs font-bold px-2 py-1 rounded-full">OFERTA!</span>
+            <span className="absolute -top-4 -right-4 bg-blue-600 text-white text-xs font-bold px-2 py-1 rounded-full">OFERTA!</span>
             <a 
               href="#pricing" 
-              className="bg-red-600 hover:bg-red-700 text-white font-bold py-4 px-8 rounded-full shadow-xl text-lg sm:text-xl flex items-center justify-center gap-2 transition-all duration-300 transform hover:scale-105"
+              className="bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-8 rounded-full shadow-xl text-lg sm:text-xl flex items-center justify-center gap-2 transition-all duration-300 transform hover:scale-105"
             >
               <ShoppingCart className="mr-1" size={24} />
               COMPRAR AGORA
@@ -93,10 +94,10 @@ const HeroSection = () => {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 1, duration: 0.5 }}
-            className="flex items-center bg-purple-100 px-4 py-2 rounded-full"
+            className="flex items-center bg-cyan-100 px-4 py-2 rounded-full"
           >
-            <Award className="text-purple-600 mr-2" size={20} />
-            <span className="text-purple-800 font-medium">+5.000 clientes satisfeitos</span>
+            <Award className="text-cyan-600 mr-2" size={20} />
+            <span className="text-cyan-800 font-medium">+5.000 clientes satisfeitos</span>
           </motion.div>
         </div>
       </motion.div>
@@ -115,6 +116,12 @@ const HeroSection = () => {
           <ArrowDown className="animate-bounce-subtle" size={24} />
         </a>
       </motion.div>
+      
+      <div className="absolute bottom-0 left-0 right-0">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" className="w-full h-auto">
+          <path fill="#f0f9ff" fillOpacity="0.3" d="M0,288L48,272C96,256,192,224,288,197.3C384,171,480,149,576,165.3C672,181,768,235,864,250.7C960,267,1056,245,1152,224C1248,203,1344,181,1392,170.7L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+        </svg>
+      </div>
     </motion.section>
   );
 };

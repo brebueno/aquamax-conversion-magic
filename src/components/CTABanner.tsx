@@ -12,7 +12,7 @@ const CTABanner = () => {
       ref={ref}
       className="py-20 relative overflow-hidden"
     >
-      <div className="absolute inset-0 bg-gradient-to-r from-red-600 to-red-800 opacity-95"></div>
+      <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-blue-800 opacity-95"></div>
       
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -52,7 +52,7 @@ const CTABanner = () => {
             href="#pricing"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="bg-white text-red-600 hover:bg-yellow-100 font-bold py-4 px-8 rounded-full shadow-xl transition-all duration-300 text-xl flex items-center justify-center gap-2"
+            className="bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-8 rounded-full shadow-xl transition-all duration-300 text-xl flex items-center justify-center gap-2"
           >
             <ShoppingCart size={24} />
             COMPRAR AGORA
