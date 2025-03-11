@@ -1,786 +1,602 @@
 
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Aquamax - Reduza sua conta de água em até 60%</title>
-    <meta name="description" content="O Bloqueador de Ar Aquamax impede a cobrança de ar na sua conta de água, reduzindo os valores em até 60% em apenas 2 meses." />
-    <meta name="author" content="Aquamax" />
-    <meta property="og:image" content="images/og-image.png" />
-    <meta property="og:title" content="Aquamax - Reduza sua conta de água em até 60%" />
-    <meta property="og:description" content="O Bloqueador de Ar Aquamax impede a cobrança de ar na sua conta de água, reduzindo os valores em até 60% em apenas 2 meses." />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aquamax - Economize até 60% na sua conta de água</title>
+    <meta name="description" content="Economize até 60% na sua conta de água com o Aquamax, o dispositivo que bloqueia a entrada de ar no hidrômetro.">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
-    <!-- Feather Icons (similar to Lucide) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Feather Icons (alternative to Lucide Icons) -->
     <script src="https://unpkg.com/feather-icons"></script>
-  </head>
-  <body>
+</head>
+<body>
+    <!-- Navigation -->
+    <header class="navbar">
+        <div class="container">
+            <div class="logo">
+                <h1>AQUAMAX</h1>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="#video">Como Funciona</a></li>
+                    <li><a href="#calculator">Calculadora</a></li>
+                    <li><a href="#testimonials">Depoimentos</a></li>
+                    <li><a href="#pricing">Preços</a></li>
+                    <li><a href="#faq">Perguntas Frequentes</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-btn">
+                <i data-feather="menu"></i>
+            </button>
+        </div>
+    </header>
+
     <!-- Hero Section -->
-    <section id="hero" class="hero-section">
-      <div class="hero-container">
-        <div class="hero-content">
-          <div class="promotion-badge animate-pulse">
-            ATENÇÃO: Últimas unidades em promoção!
-          </div>
-          
-          <h1 class="hero-title">
-            <span class="text-blue">VOCÊ ESTÁ PAGANDO POR AR</span> na sua conta de água
-          </h1>
-          
-          <p class="hero-description">
-            O <span class="highlight-text">Bloqueador de Ar Aquamax</span> bloqueia essa cobrança e reduz sua conta em até <span class="text-blue font-bold">60%</span> em 2 meses!
-          </p>
-          
-          <div class="cta-buttons">
-            <div class="relative">
-              <span class="offer-badge">OFERTA!</span>
-              <a href="#pricing" class="cta-button cta-primary">
-                <i data-feather="shopping-cart"></i>
-                COMPRAR AGORA
-              </a>
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">TECNOLOGIA EXCLUSIVA</div>
+                <h1>Economize até 60% na sua conta de água</h1>
+                <p>O Aquamax bloqueia a entrada de ar no hidrômetro, impedindo que você pague pelo ar que passa pelos canos.</p>
+                <div class="hero-cta">
+                    <a href="#pricing" class="btn btn-primary">GARANTIR MEU AQUAMAX</a>
+                    <a href="#video" class="btn btn-secondary">Ver como funciona</a>
+                </div>
+                <div class="hero-features">
+                    <div class="feature">
+                        <i data-feather="check-circle"></i>
+                        <span>Instalação em 5 minutos</span>
+                    </div>
+                    <div class="feature">
+                        <i data-feather="check-circle"></i>
+                        <span>Garantia de 30 dias</span>
+                    </div>
+                    <div class="feature">
+                        <i data-feather="check-circle"></i>
+                        <span>+5.000 clientes satisfeitos</span>
+                    </div>
+                </div>
             </div>
-
-            <a href="#video" class="cta-button cta-secondary">
-              <i data-feather="zap"></i>
-              VER COMO FUNCIONA
-            </a>
-          </div>
-
-          <div class="feature-badges">
-            <div class="feature-badge bg-green-light">
-              <i data-feather="award"></i>
-              <span>Até 60% de economia</span>
+            <div class="hero-image">
+                <img src="images/product-showcase.jpg" alt="Aquamax - Redutor de conta de água">
             </div>
-            
-            <div class="feature-badge bg-blue-light">
-              <i data-feather="award"></i>
-              <span>Instalação em 5 minutos</span>
-            </div>
-            
-            <div class="feature-badge bg-cyan-light">
-              <i data-feather="award"></i>
-              <span>+5.000 clientes satisfeitos</span>
-            </div>
-          </div>
         </div>
-        
-        <div class="scroll-prompt">
-          <a href="#video" class="scroll-link">
-            <span>Veja o vídeo</span>
-            <i data-feather="arrow-down" class="animate-bounce"></i>
-          </a>
-        </div>
-      </div>
     </section>
 
     <!-- Video Section -->
-    <section id="video" class="section bg-gradient-to-blue">
-      <div class="container">
-        <div class="text-center mb-8">
-          <span class="badge badge-red">PROBLEMA REVELADO</span>
-          <h2 class="section-title">
-            Até 40% da sua conta é <span class="text-red font-bold">AR</span> que entra no hidrômetro
-          </h2>
-          <p class="section-description">
-            Assista como o Aquamax resolve este problema:
-          </p>
+    <section id="video" class="video-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">PROBLEMA REVELADO</div>
+                <h2>Até 40% da sua conta é <span class="highlight">AR</span> que entra no hidrômetro</h2>
+                <p>Assista como o Aquamax resolve este problema:</p>
+            </div>
+
+            <div class="video-container">
+                <div class="video-placeholder" id="videoPlaceholder">
+                    <img src="images/video-placeholder.jpg" alt="Vídeo do Aquamax">
+                    <div class="play-button" id="playButton">
+                        <i data-feather="play"></i>
+                    </div>
+                </div>
+                <div class="video-iframe" id="videoIframe" style="display: none;">
+                    <!-- YouTube iframe will be inserted here via JavaScript -->
+                </div>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i data-feather="check-circle"></i>
+                    <h3>Economia Garantida</h3>
+                    <p>Reduza sua conta em até 60% bloqueando a entrada de ar no hidrômetro</p>
+                </div>
+                <div class="feature-card">
+                    <i data-feather="check-circle"></i>
+                    <h3>Instalação Super Fácil</h3>
+                    <p>Instale em menos de 5 minutos sem precisar de ferramentas especiais</p>
+                </div>
+                <div class="feature-card">
+                    <i data-feather="check-circle"></i>
+                    <h3>Compatível com Todos os Sistemas</h3>
+                    <p>Funciona com qualquer tipo de encanamento e hidrômetro</p>
+                </div>
+                <div class="feature-card">
+                    <i data-feather="check-circle"></i>
+                    <h3>Garantia de 30 Dias</h3>
+                    <p>Se não estiver satisfeito, devolvemos 200% do valor investido</p>
+                </div>
+            </div>
+
+            <div class="cta-center">
+                <div class="cta-badge">+5.000 unidades vendidas</div>
+                <a href="#pricing" class="btn btn-primary">GARANTIR MEU AQUAMAX</a>
+            </div>
         </div>
-        
-        <div class="video-container">
-          <div class="video-placeholder">
-            <img src="images/video-placeholder.jpg" alt="Vídeo do Aquamax" class="video-thumbnail">
-            <div class="play-button">
-              <i data-feather="play" fill="white" class="play-icon"></i>
-            </div>
-          </div>
-        </div>
-        
-        <div class="features-grid">
-          <div class="feature-card">
-            <i data-feather="check-circle" class="feature-icon"></i>
-            <div>
-              <h3 class="feature-title">Economia Garantida</h3>
-              <p class="feature-description">Reduza sua conta em até 60% bloqueando a entrada de ar no hidrômetro</p>
-            </div>
-          </div>
-          
-          <div class="feature-card">
-            <i data-feather="check-circle" class="feature-icon"></i>
-            <div>
-              <h3 class="feature-title">Instalação Super Fácil</h3>
-              <p class="feature-description">Instale em menos de 5 minutos sem precisar de ferramentas especiais</p>
-            </div>
-          </div>
-          
-          <div class="feature-card">
-            <i data-feather="check-circle" class="feature-icon"></i>
-            <div>
-              <h3 class="feature-title">Compatível com Todos os Sistemas</h3>
-              <p class="feature-description">Funciona com qualquer tipo de encanamento e hidrômetro</p>
-            </div>
-          </div>
-          
-          <div class="feature-card">
-            <i data-feather="check-circle" class="feature-icon"></i>
-            <div>
-              <h3 class="feature-title">Garantia de 30 Dias</h3>
-              <p class="feature-description">Se não estiver satisfeito, devolvemos 200% do valor investido</p>
-            </div>
-          </div>
-        </div>
-        
-        <div class="cta-container">
-          <div class="units-sold">
-            <span>+5.000 unidades vendidas</span>
-          </div>
-          
-          <a href="#pricing" class="cta-button cta-primary">
-            <i data-feather="shopping-cart"></i>
-            GARANTIR MEU AQUAMAX
-          </a>
-        </div>
-      </div>
     </section>
 
     <!-- How It Works Section -->
-    <section id="how-it-works" class="section bg-white">
-      <div class="container">
-        <div class="text-center mb-16">
-          <h2 class="section-title">
-            Como o <span class="text-gradient">Aquamax</span> Funciona
-          </h2>
-          <p class="section-description">
-            Tecnologia patenteada que previne a entrada de ar no seu hidrômetro, garantindo que você pague apenas pela água que realmente consome.
-          </p>
+    <section class="how-it-works-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">TECNOLOGIA EXCLUSIVA</div>
+                <h2>Como o Aquamax Funciona</h2>
+                <p>Entenda porque nosso produto é revolucionário</p>
+            </div>
+
+            <div class="steps-container">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>O Problema do Ar</h3>
+                        <p>Quando falta água ou há vazamentos, ar entra nas tubulações e é contabilizado pelo hidrômetro como água consumida.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>A Solução Aquamax</h3>
+                        <p>O Aquamax é instalado antes do hidrômetro e sua tecnologia exclusiva impede que o ar seja contabilizado.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Economia Imediata</h3>
+                        <p>Após a instalação, você começa a economizar imediatamente, com reduções de até 60% na sua conta de água.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="how-it-works-image">
+                <img src="images/como-funciona-2.png" alt="Como funciona o Aquamax">
+            </div>
+
+            <div class="cta-center">
+                <a href="#calculator" class="btn btn-secondary">Calcular minha economia</a>
+            </div>
         </div>
-        
-        <div class="features-grid-4">
-          <div class="feature-box">
-            <div class="icon-container">
-              <i data-feather="droplet" class="feature-icon icon-blue"></i>
-            </div>
-            <h3 class="feature-box-title">Bloqueia o Ar</h3>
-            <p class="feature-box-description">Impede a entrada de ar no hidrômetro, evitando a cobrança indevida</p>
-          </div>
-          
-          <div class="feature-box">
-            <div class="icon-container">
-              <i data-feather="x-circle" class="feature-icon icon-red"></i>
-            </div>
-            <h3 class="feature-box-title">Fácil Instalação</h3>
-            <p class="feature-box-description">Instale você mesmo em minutos, sem precisar de encanador</p>
-          </div>
-          
-          <div class="feature-box">
-            <div class="icon-container">
-              <i data-feather="clock" class="feature-icon icon-blue"></i>
-            </div>
-            <h3 class="feature-box-title">Economia Imediata</h3>
-            <p class="feature-box-description">Veja resultados já na próxima conta de água</p>
-          </div>
-          
-          <div class="feature-box">
-            <div class="icon-container">
-              <i data-feather="bar-chart-2" class="feature-icon icon-red"></i>
-            </div>
-            <h3 class="feature-box-title">Até 60% de Economia</h3>
-            <p class="feature-box-description">Reduza dramaticamente o valor da sua conta de água</p>
-          </div>
-        </div>
-        
-        <div class="product-showcase">
-          <img src="images/product-showcase.jpg" alt="Aquamax em funcionamento" class="showcase-image">
-          <div class="showcase-overlay">
-            <div class="showcase-content">
-              <h3 class="showcase-title">Comprovado em Laboratório</h3>
-              <p class="showcase-description">
-                Testado e certificado por laboratórios independentes, comprovando sua eficácia na redução do consumo.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
     </section>
 
     <!-- Testimonials Section -->
-    <section id="testimonials" class="section bg-gradient-to-white">
-      <div class="container">
-        <div class="text-center mb-16">
-          <div class="badge badge-blue">92% dos clientes recomendam</div>
-          <h2 class="section-title">O Que Nossos Clientes Dizem</h2>
-          <p class="section-description">Milhares de famílias já estão economizando com o Aquamax</p>
+    <section id="testimonials" class="testimonials-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">92% dos clientes recomendam</div>
+                <h2>O Que Nossos Clientes Dizem</h2>
+                <p>Milhares de famílias já estão economizando com o Aquamax</p>
+            </div>
+
+            <div class="testimonials-container">
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-author">
+                            <div class="author-image">
+                                <img src="images/testimonial-1.jpg" alt="Carlos Silva">
+                            </div>
+                            <div class="author-info">
+                                <h4>Carlos Silva</h4>
+                                <p>São Paulo, SP</p>
+                            </div>
+                        </div>
+                        <div class="quote-icon">
+                            <i data-feather="quote"></i>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">"Minha conta passou de R$ 380 para R$ 180 em apenas um mês após instalar o Aquamax. A economia já pagou o investimento várias vezes!"</p>
+                    <div class="testimonial-footer">
+                        <div class="stars">
+                            <i data-feather="star" class="star-filled"></i>
+                            <i data-feather="star" class="star-filled"></i>
+                            <i data-feather="star" class="star-filled"></i>
+                            <i data-feather="star" class="star-filled"></i>
+                            <i data-feather="star" class="star-filled"></i>
+                        </div>
+                        <div class="saving">Economia: R$ 200/mês</div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-author">
+                            <div class="author-image">
+                                <img src="images/testimonial-2.jpg" alt="Ana Costa">
+                            </div>
+                            <div class="author-info">
+                                <h4>Ana Costa</h4>
+                                <p>Rio de Janeiro, RJ</p>
+                            </div>
+                        </div>
+                        <div class="quote-icon">
+                            <i data-feather="quote"></i>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">"Instalei sozinha em 10 minutos e na primeira conta já vi a diferença. Economizei quase 50% e não tive nenhuma alteração na pressão da água."</p>
+                    <div class="testimonial-footer">
+                        <div class="stars">
+                            <i data-feather="star" class="star-filled"></i>
+                            <i data-feather="star" class="star-filled"></i>
+                            <i data-feather="star" class="star-filled"></i>
+                            <i data-feather="star" class="star-filled"></i>
+                            <i data-feather="star" class="star-filled"></i>
+                        </div>
+                        <div class="saving">Economia: R$ 150/mês</div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-author">
+                            <div class="author-image">
+                                <img src="images/testimonial-3.jpg" alt="Roberto Oliveira">
+                            </div>
+                            <div class="author-info">
+                                <h4>Roberto Oliveira</h4>
+                                <p>Curitiba, PR</p>
+                            </div>
+                        </div>
+                        <div class="quote-icon">
+                            <i data-feather="quote"></i>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">"Estava cético no início, mas a economia é real. Em dois meses minha conta caiu significativamente e a instalação foi muito simples."</p>
+                    <div class="testimonial-footer">
+                        <div class="stars">
+                            <i data-feather="star" class="star-filled"></i>
+                            <i data-feather="star" class="star-filled"></i>
+                            <i data-feather="star" class="star-filled"></i>
+                            <i data-feather="star" class="star-filled"></i>
+                            <i data-feather="star"></i>
+                        </div>
+                        <div class="saving">Economia: R$ 180/mês</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cta-center">
+                <a href="#calculator" class="btn btn-secondary">Calcular minha economia</a>
+            </div>
         </div>
-        
-        <div class="testimonials-grid">
-          <div class="testimonial-card">
-            <div class="testimonial-header">
-              <div class="testimonial-author">
-                <div class="author-image">
-                  <img src="images/testimonial-1.jpg" alt="Carlos Silva">
-                </div>
-                <div class="author-info">
-                  <h4 class="author-name">Carlos Silva</h4>
-                  <p class="author-location">São Paulo, SP</p>
-                </div>
-              </div>
-              <i data-feather="quote" class="quote-icon"></i>
-            </div>
-            
-            <p class="testimonial-text">
-              "Minha conta passou de R$ 380 para R$ 180 em apenas um mês após instalar o Aquamax. A economia já pagou o investimento várias vezes!"
-            </p>
-            
-            <div class="testimonial-footer">
-              <div class="rating">
-                <i data-feather="star" class="star-filled"></i>
-                <i data-feather="star" class="star-filled"></i>
-                <i data-feather="star" class="star-filled"></i>
-                <i data-feather="star" class="star-filled"></i>
-                <i data-feather="star" class="star-filled"></i>
-              </div>
-              
-              <div class="saving-badge">
-                Economia: R$ 200/mês
-              </div>
-            </div>
-          </div>
-          
-          <div class="testimonial-card">
-            <div class="testimonial-header">
-              <div class="testimonial-author">
-                <div class="author-image">
-                  <img src="images/testimonial-2.jpg" alt="Ana Costa">
-                </div>
-                <div class="author-info">
-                  <h4 class="author-name">Ana Costa</h4>
-                  <p class="author-location">Rio de Janeiro, RJ</p>
-                </div>
-              </div>
-              <i data-feather="quote" class="quote-icon"></i>
-            </div>
-            
-            <p class="testimonial-text">
-              "Instalei sozinha em 10 minutos e na primeira conta já vi a diferença. Economizei quase 50% e não tive nenhuma alteração na pressão da água."
-            </p>
-            
-            <div class="testimonial-footer">
-              <div class="rating">
-                <i data-feather="star" class="star-filled"></i>
-                <i data-feather="star" class="star-filled"></i>
-                <i data-feather="star" class="star-filled"></i>
-                <i data-feather="star" class="star-filled"></i>
-                <i data-feather="star" class="star-filled"></i>
-              </div>
-              
-              <div class="saving-badge">
-                Economia: R$ 150/mês
-              </div>
-            </div>
-          </div>
-          
-          <div class="testimonial-card">
-            <div class="testimonial-header">
-              <div class="testimonial-author">
-                <div class="author-image">
-                  <img src="images/testimonial-3.jpg" alt="Roberto Oliveira">
-                </div>
-                <div class="author-info">
-                  <h4 class="author-name">Roberto Oliveira</h4>
-                  <p class="author-location">Curitiba, PR</p>
-                </div>
-              </div>
-              <i data-feather="quote" class="quote-icon"></i>
-            </div>
-            
-            <p class="testimonial-text">
-              "Estava cético no início, mas a economia é real. Em dois meses minha conta caiu significativamente e a instalação foi muito simples."
-            </p>
-            
-            <div class="testimonial-footer">
-              <div class="rating">
-                <i data-feather="star" class="star-filled"></i>
-                <i data-feather="star" class="star-filled"></i>
-                <i data-feather="star" class="star-filled"></i>
-                <i data-feather="star" class="star-filled"></i>
-                <i data-feather="star" class="star-empty"></i>
-              </div>
-              
-              <div class="saving-badge">
-                Economia: R$ 180/mês
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="cta-container centered">
-          <a href="#calculator" class="cta-button-outline">
-            Calcular minha economia
-            <span class="arrow-right">→</span>
-          </a>
-        </div>
-      </div>
     </section>
 
     <!-- Savings Calculator Section -->
-    <section id="calculator" class="section bg-white">
-      <div class="container">
-        <div class="text-center mb-12">
-          <div class="badge badge-calculator">
-            <i data-feather="calculator"></i>
-            <span>Calculadora de Economia</span>
-          </div>
-          <h2 class="section-title">Descubra Quanto Você Vai Economizar</h2>
-          <p class="section-description">
-            Insira o valor da sua última conta de água e descubra sua economia estimada com o Aquamax
-          </p>
-        </div>
-        
-        <div class="calculator-card">
-          <div class="calculator-form">
-            <div class="input-group">
-              <label for="bill-amount" class="input-label">Valor da sua conta atual (R$)</label>
-              <div class="input-with-button">
-                <input
-                  id="bill-amount"
-                  type="text"
-                  class="input-field"
-                  placeholder="Ex: 250,00"
-                >
-                <button id="calculate-btn" class="calculate-button">Calcular</button>
-              </div>
+    <section id="calculator" class="calculator-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <i data-feather="calculator"></i>
+                    <span>Calculadora de Economia</span>
+                </div>
+                <h2>Descubra Quanto Você Vai Economizar</h2>
+                <p>Insira o valor da sua última conta de água e descubra sua economia estimada com o Aquamax</p>
             </div>
-            
-            <div class="result-container" id="result-container">
-              <p class="result-label">Sua economia estimada:</p>
-              <h3 id="savings-amount" class="savings-amount">
-                R$ --,--
-                <span class="per-month">/mês</span>
-              </h3>
-              <p id="savings-message" class="savings-message">
-                Insira o valor da sua conta para calcular
-              </p>
+
+            <div class="calculator-card">
+                <div class="calculator-form">
+                    <div class="form-group">
+                        <label for="bill-amount">Valor da sua conta atual (R$)</label>
+                        <div class="input-wrapper">
+                            <input type="text" id="bill-amount" placeholder="Ex: 250,00">
+                            <button id="calculate-btn">Calcular</button>
+                        </div>
+                    </div>
+                    
+                    <div class="savings-display">
+                        <p>Sua economia estimada:</p>
+                        <h3 id="savings-value">R$ --,--<span>/mês</span></h3>
+                        <p id="yearly-savings" class="yearly-savings">Insira o valor da sua conta para calcular</p>
+                    </div>
+                </div>
+                
+                <div class="savings-message" id="savings-message" style="display: none;">
+                    <p>Com o Aquamax, você economizaria aproximadamente <strong id="yearly-total">R$ 0,00</strong> em um ano! O produto se paga em menos de um mês.</p>
+                </div>
             </div>
-          </div>
-          
-          <div id="savings-details" class="savings-details hidden">
-            <p class="savings-details-text">
-              Com o Aquamax, você economizaria aproximadamente <strong id="annual-savings">R$ --,--</strong> em um ano! 
-              O produto se paga em menos de um mês.
-            </p>
-          </div>
         </div>
-      </div>
     </section>
 
     <!-- Pricing Section -->
-    <section id="pricing" class="section bg-gradient-to-blue">
-      <div class="container">
-        <div class="text-center mb-12">
-          <div class="badge badge-alert animate-pulse">
-            <i data-feather="alert-triangle"></i>
-            ÚLTIMAS 50 UNIDADES COM 67% OFF!
-          </div>
-          <h2 class="section-title">Garanta o Seu Aquamax Hoje</h2>
-          <p class="section-description">
-            Oferta por tempo limitado! Não perca essa oportunidade
-          </p>
+    <section id="pricing" class="pricing-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="alert-badge">
+                    <i data-feather="alert-triangle"></i>
+                    ÚLTIMAS 50 UNIDADES COM 67% OFF!
+                </div>
+                <h2>Garanta o Seu Aquamax Hoje</h2>
+                <p>Oferta por tempo limitado! Não perca essa oportunidade</p>
+            </div>
+
+            <div class="countdown-timer">
+                <div class="countdown-item">
+                    <span class="count-value" id="hours">23</span>
+                    <span class="count-label">horas</span>
+                </div>
+                <span class="count-separator">:</span>
+                <div class="countdown-item">
+                    <span class="count-value" id="minutes">59</span>
+                    <span class="count-label">min</span>
+                </div>
+                <span class="count-separator">:</span>
+                <div class="countdown-item">
+                    <span class="count-value" id="seconds">59</span>
+                    <span class="count-label">seg</span>
+                </div>
+            </div>
+
+            <div class="pricing-container">
+                <div class="pricing-card">
+                    <div class="pricing-badge">Oferta Individual</div>
+                    <div class="pricing-price">
+                        <div class="original-price">De R$ 297,00</div>
+                        <div class="current-price">R$ 119,90</div>
+                    </div>
+                    
+                    <div class="pricing-features">
+                        <h3>O que você recebe:</h3>
+                        <ul>
+                            <li><i data-feather="check"></i> Bloqueia a entrada de ar no hidrômetro</li>
+                            <li><i data-feather="check"></i> Instalação sem ferramentas especiais</li>
+                            <li><i data-feather="check"></i> Compatível com qualquer tipo de rede</li>
+                            <li><i data-feather="check"></i> Reduz até 60% na conta de água</li>
+                            <li><i data-feather="check"></i> Garantia de 30 dias</li>
+                            <li><i data-feather="check"></i> Suporte técnico gratuito</li>
+                        </ul>
+                    </div>
+                    
+                    <a href="#" class="btn btn-success">
+                        <i data-feather="shopping-cart"></i>
+                        COMPRAR AGORA
+                    </a>
+                    
+                    <p class="pricing-note">Entrega em todo Brasil • Pagamento seguro</p>
+                </div>
+
+                <div class="pricing-card featured">
+                    <div class="best-offer">MELHOR OFERTA</div>
+                    <div class="pricing-badge">Kit Economia Total</div>
+                    <div class="pricing-price">
+                        <div class="original-price">De R$ 447,00</div>
+                        <div class="current-price">R$ 179,80</div>
+                    </div>
+                    
+                    <div class="product-image">
+                        <img src="images/como-funciona-2.png" alt="Como funciona o Aquamax">
+                        <p>Veja como o Aquamax funciona</p>
+                    </div>
+                    
+                    <div class="pricing-features">
+                        <h3>O que você recebe:</h3>
+                        <ul>
+                            <li><i data-feather="check"></i> Bloqueia a entrada de ar no hidrômetro</li>
+                            <li><i data-feather="check"></i> Instalação sem ferramentas especiais</li>
+                            <li><i data-feather="check"></i> Compatível com qualquer tipo de rede</li>
+                            <li><i data-feather="check"></i> Reduz até 60% na conta de água</li>
+                            <li><i data-feather="check"></i> Garantia de 30 dias</li>
+                            <li><i data-feather="check"></i> Suporte técnico gratuito</li>
+                            <li class="featured-item"><i data-feather="check"></i> 2 unidades do Aquamax</li>
+                            <li class="bonus-item"><i data-feather="gift"></i> Filtro Anti-Vazamento GRÁTIS</li>
+                            <li class="bonus-item"><i data-feather="gift"></i> Guia "Como Reduzir Sua Conta em 7 Dias"</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="savings-alert">
+                        <span>💧 Economize R$ 60,00 nesta oferta! 💧</span>
+                    </div>
+                    
+                    <a href="#" class="btn btn-success pulse">
+                        <i data-feather="shopping-cart"></i>
+                        COMPRAR KIT ECONOMIA
+                    </a>
+                    
+                    <p class="pricing-note">Entrega em todo Brasil • Pagamento seguro</p>
+                </div>
+            </div>
+
+            <div class="guarantees">
+                <div class="guarantee">
+                    <i data-feather="clock"></i>
+                    <div>
+                        <h4>Oferta por tempo limitado</h4>
+                        <p>Válida até o fim do estoque</p>
+                    </div>
+                </div>
+                
+                <div class="guarantee-divider"></div>
+                
+                <div class="guarantee">
+                    <i data-feather="shield"></i>
+                    <div>
+                        <h4>Garantia de 30 dias</h4>
+                        <p>Ou 200% do seu dinheiro de volta</p>
+                    </div>
+                </div>
+            </div>
         </div>
-        
-        <div class="countdown-container">
-          <div class="countdown" id="countdown">
-            <div class="countdown-item">
-              <span id="hours" class="countdown-value">23</span>
-              <span class="countdown-label">horas</span>
-            </div>
-            <span class="countdown-separator">:</span>
-            <div class="countdown-item">
-              <span id="minutes" class="countdown-value">59</span>
-              <span class="countdown-label">min</span>
-            </div>
-            <span class="countdown-separator">:</span>
-            <div class="countdown-item">
-              <span id="seconds" class="countdown-value">59</span>
-              <span class="countdown-label">seg</span>
-            </div>
-          </div>
-        </div>
-        
-        <div class="pricing-grid">
-          <div class="pricing-card">
-            <div class="pricing-badge">
-              Oferta Individual
-            </div>
-            
-            <div class="pricing-price">
-              <div class="price-original">De R$ 297,00</div>
-              <div class="price-discounted">R$ 119,90</div>
-            </div>
-            
-            <div class="pricing-features">
-              <h3 class="pricing-features-title">O que você recebe:</h3>
-              <ul class="features-list">
-                <li class="feature-item">
-                  <i data-feather="check" class="feature-check"></i>
-                  <span>Bloqueia a entrada de ar no hidrômetro</span>
-                </li>
-                <li class="feature-item">
-                  <i data-feather="check" class="feature-check"></i>
-                  <span>Instalação sem ferramentas especiais</span>
-                </li>
-                <li class="feature-item">
-                  <i data-feather="check" class="feature-check"></i>
-                  <span>Compatível com qualquer tipo de rede</span>
-                </li>
-                <li class="feature-item">
-                  <i data-feather="check" class="feature-check"></i>
-                  <span>Reduz até 60% na conta de água</span>
-                </li>
-                <li class="feature-item">
-                  <i data-feather="check" class="feature-check"></i>
-                  <span>Garantia de 30 dias</span>
-                </li>
-                <li class="feature-item">
-                  <i data-feather="check" class="feature-check"></i>
-                  <span>Suporte técnico gratuito</span>
-                </li>
-              </ul>
-            </div>
-            
-            <button class="buy-button">
-              <i data-feather="shopping-cart"></i>
-              COMPRAR AGORA
-            </button>
-            
-            <p class="pricing-footer">
-              Entrega em todo Brasil • Pagamento seguro
-            </p>
-          </div>
-          
-          <div class="pricing-card pricing-card-highlight">
-            <div class="best-offer-tag">MELHOR OFERTA</div>
-            
-            <div class="pricing-badge">
-              Kit Economia Total
-            </div>
-            
-            <div class="pricing-price">
-              <div class="price-original">De R$ 447,00</div>
-              <div class="price-discounted">R$ 179,80</div>
-            </div>
-            
-            <div class="image-container">
-              <img src="images/como-funciona-2.png" alt="Como funciona o Aquamax">
-              <p class="image-caption">Veja como o Aquamax funciona</p>
-            </div>
-            
-            <div class="pricing-features">
-              <h3 class="pricing-features-title">O que você recebe:</h3>
-              <ul class="features-list">
-                <li class="feature-item">
-                  <i data-feather="check" class="feature-check"></i>
-                  <span>Bloqueia a entrada de ar no hidrômetro</span>
-                </li>
-                <li class="feature-item">
-                  <i data-feather="check" class="feature-check"></i>
-                  <span>Instalação sem ferramentas especiais</span>
-                </li>
-                <li class="feature-item">
-                  <i data-feather="check" class="feature-check"></i>
-                  <span>Compatível com qualquer tipo de rede</span>
-                </li>
-                <li class="feature-item">
-                  <i data-feather="check" class="feature-check"></i>
-                  <span>Reduz até 60% na conta de água</span>
-                </li>
-                <li class="feature-item">
-                  <i data-feather="check" class="feature-check"></i>
-                  <span>Garantia de 30 dias</span>
-                </li>
-                <li class="feature-item">
-                  <i data-feather="check" class="feature-check"></i>
-                  <span>Suporte técnico gratuito</span>
-                </li>
-                <li class="feature-item highlight">
-                  <i data-feather="check" class="feature-check"></i>
-                  <span>2 unidades do Aquamax</span>
-                </li>
-                <li class="feature-item gift">
-                  <i data-feather="gift" class="feature-gift"></i>
-                  <span>Filtro Anti-Vazamento GRÁTIS</span>
-                </li>
-                <li class="feature-item gift">
-                  <i data-feather="gift" class="feature-gift"></i>
-                  <span>Guia "Como Reduzir Sua Conta em 7 Dias"</span>
-                </li>
-              </ul>
-            </div>
-            
-            <div class="savings-alert">
-              <span>💧 Economize R$ 60,00 nesta oferta! 💧</span>
-            </div>
-            
-            <button class="buy-button buy-button-highlight animate-pulse">
-              <i data-feather="shopping-cart"></i>
-              COMPRAR KIT ECONOMIA
-            </button>
-            
-            <p class="pricing-footer">
-              Entrega em todo Brasil • Pagamento seguro
-            </p>
-          </div>
-        </div>
-        
-        <div class="guarantee-features">
-          <div class="guarantee-feature">
-            <i data-feather="clock" class="guarantee-icon"></i>
-            <div class="guarantee-text">
-              <h4 class="guarantee-title">Oferta por tempo limitado</h4>
-              <p class="guarantee-description">Válida até o fim do estoque</p>
-            </div>
-          </div>
-          
-          <div class="guarantee-divider"></div>
-          
-          <div class="guarantee-feature">
-            <i data-feather="shield" class="guarantee-icon"></i>
-            <div class="guarantee-text">
-              <h4 class="guarantee-title">Garantia de 30 dias</h4>
-              <p class="guarantee-description">Ou 200% do seu dinheiro de volta</p>
-            </div>
-          </div>
-        </div>
-      </div>
     </section>
 
     <!-- Guarantee Section -->
-    <section id="guarantee" class="section bg-white">
-      <div class="container">
-        <div class="guarantee-card">
-          <div class="guarantee-header"></div>
-          
-          <div class="guarantee-content">
-            <div class="guarantee-icon-container">
-              <i data-feather="shield" class="guarantee-shield-icon"></i>
+    <section class="guarantee-section">
+        <div class="container">
+            <div class="guarantee-content">
+                <div class="guarantee-badge">SATISFAÇÃO GARANTIDA</div>
+                <h2>Garantia Dupla de Satisfação</h2>
+                <p>Experimente o Aquamax por 30 dias sem riscos</p>
+                
+                <div class="guarantee-cards">
+                    <div class="guarantee-card">
+                        <i data-feather="shield"></i>
+                        <h3>Garantia de Economia</h3>
+                        <p>Se você não economizar pelo menos 30% na sua conta de água, devolvemos 100% do seu dinheiro.</p>
+                    </div>
+                    
+                    <div class="guarantee-card">
+                        <i data-feather="award"></i>
+                        <h3>Garantia de Satisfação</h3>
+                        <p>Se por qualquer motivo você não estiver satisfeito, devolvemos 200% do valor investido.</p>
+                    </div>
+                </div>
+                
+                <div class="guarantee-seal">
+                    <img src="images/placeholder.svg" alt="Selo de Garantia" class="guarantee-image">
+                    <div class="days">30<br>DIAS</div>
+                </div>
             </div>
-            
-            <div class="guarantee-text-container">
-              <h2 class="guarantee-heading">Garantia Blindada de 30 Dias</h2>
-              
-              <p class="guarantee-description">
-                Experimente o Aquamax por 30 dias. Se não estiver 100% satisfeito com a economia na sua conta, devolva e receba <span class="guarantee-highlight">200% do valor investido</span>.
-              </p>
-              
-              <ul class="guarantee-list">
-                <li>
-                  <i data-feather="check-circle" class="guarantee-check"></i>
-                  <span>Sem perguntas ou complicações</span>
-                </li>
-                <li>
-                  <i data-feather="check-circle" class="guarantee-check"></i>
-                  <span>Devolução do dobro do valor pago</span>
-                </li>
-                <li>
-                  <i data-feather="check-circle" class="guarantee-check"></i>
-                  <span>Testado e aprovado por mais de 5.000 clientes</span>
-                </li>
-              </ul>
-              
-              <a href="#pricing" class="guarantee-button">
-                Garantir Meu Aquamax
-              </a>
-            </div>
-          </div>
         </div>
-      </div>
     </section>
 
     <!-- FAQ Section -->
-    <section id="faq" class="section bg-gradient-to-white">
-      <div class="container">
-        <div class="text-center mb-12">
-          <h2 class="section-title">Perguntas Frequentes</h2>
-          <p class="section-description">
-            Tudo o que você precisa saber sobre o Aquamax
-          </p>
+    <section id="faq" class="faq-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <i data-feather="help-circle"></i>
+                    <span>Perguntas Frequentes</span>
+                </div>
+                <h2>Tire Suas Dúvidas</h2>
+                <p>Veja as perguntas mais comuns sobre o Aquamax</p>
+            </div>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question" data-faq="1">
+                        Como o Aquamax funciona?
+                        <i data-feather="chevron-down"></i>
+                    </div>
+                    <div class="faq-answer" id="faq-1">
+                        <p>O Aquamax é instalado antes do hidrômetro e utiliza uma tecnologia exclusiva que impede que o ar presente nas tubulações seja contabilizado como água. Quando há falta de água ou vazamentos, ar entra nas tubulações e, sem o Aquamax, esse ar é cobrado como se fosse água consumida.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" data-faq="2">
+                        Quanto tempo demora para instalar?
+                        <i data-feather="chevron-down"></i>
+                    </div>
+                    <div class="faq-answer" id="faq-2">
+                        <p>A instalação é super simples e rápida, levando apenas 5 minutos em média. Não são necessárias ferramentas especiais e qualquer pessoa pode fazer a instalação seguindo o manual que acompanha o produto.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" data-faq="3">
+                        O Aquamax funciona com qualquer tipo de encanamento?
+                        <i data-feather="chevron-down"></i>
+                    </div>
+                    <div class="faq-answer" id="faq-3">
+                        <p>Sim, o Aquamax é compatível com todos os tipos de encanamento e hidrômetros residenciais. Ele se adapta facilmente à sua instalação atual sem necessidade de modificações complexas.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" data-faq="4">
+                        Qual a economia média que posso esperar?
+                        <i data-feather="chevron-down"></i>
+                    </div>
+                    <div class="faq-answer" id="faq-4">
+                        <p>A economia varia de acordo com vários fatores, como frequência de falta d'água na região e condições da tubulação, mas nossos clientes relatam economia média entre 40% e 60% na conta de água logo no primeiro mês após a instalação.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" data-faq="5">
+                        O Aquamax afeta a pressão da água?
+                        <i data-feather="chevron-down"></i>
+                    </div>
+                    <div class="faq-answer" id="faq-5">
+                        <p>Não, o Aquamax não afeta a pressão ou qualidade da água. Ele apenas impede que o ar seja contabilizado pelo hidrômetro, sem interferir no fluxo normal de água para sua residência.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" data-faq="6">
+                        A garantia de 30 dias é realmente de 200% do valor?
+                        <i data-feather="chevron-down"></i>
+                    </div>
+                    <div class="faq-answer" id="faq-6">
+                        <p>Sim! Estamos tão confiantes na eficácia do Aquamax que oferecemos uma garantia exclusiva. Se você não ficar satisfeito por qualquer motivo, devolvemos o dobro do valor que você investiu. Basta entrar em contato com nosso suporte em até 30 dias após a compra.</p>
+                    </div>
+                </div>
+            </div>
         </div>
-        
-        <div class="faq-container">
-          <div class="faq-item">
-            <button class="faq-question">
-              <h3>Como o Aquamax funciona?</h3>
-              <i data-feather="plus" class="faq-icon"></i>
-            </button>
-            <div class="faq-answer">
-              <p>O Aquamax utiliza uma tecnologia patenteada que impede a entrada de ar no hidrômetro, garantindo que você só pague pela água que realmente consome. Ele é instalado diretamente na entrada de água da sua casa, antes do hidrômetro.</p>
-            </div>
-          </div>
-          
-          <div class="faq-item">
-            <button class="faq-question">
-              <h3>A instalação é difícil?</h3>
-              <i data-feather="plus" class="faq-icon"></i>
-            </button>
-            <div class="faq-answer">
-              <p>Não! A instalação é extremamente simples e leva apenas alguns minutos. O kit vem com instruções detalhadas e você não precisa de ferramentas especiais ou conhecimentos técnicos.</p>
-            </div>
-          </div>
-          
-          <div class="faq-item">
-            <button class="faq-question">
-              <h3>Quanto tempo leva para ver os resultados?</h3>
-              <i data-feather="plus" class="faq-icon"></i>
-            </button>
-            <div class="faq-answer">
-              <p>A maioria dos clientes começa a ver resultados já na primeira conta de água após a instalação. Em média, a economia total se consolida após 2 meses de uso.</p>
-            </div>
-          </div>
-          
-          <div class="faq-item">
-            <button class="faq-question">
-              <h3>O Aquamax funciona em qualquer tipo de encanamento?</h3>
-              <i data-feather="plus" class="faq-icon"></i>
-            </button>
-            <div class="faq-answer">
-              <p>Sim! O Aquamax é compatível com todos os tipos de encanamento (PVC, metal, etc.) e com hidrômetros de diferentes marcas e modelos.</p>
-            </div>
-          </div>
-          
-          <div class="faq-item">
-            <button class="faq-question">
-              <h3>Como funciona a garantia de 200% do dinheiro de volta?</h3>
-              <i data-feather="plus" class="faq-icon"></i>
-            </button>
-            <div class="faq-answer">
-              <p>É simples: se você não estiver satisfeito com os resultados em até 30 dias após a compra, basta entrar em contato conosco. Devolveremos o dobro do valor que você pagou, sem fazer perguntas.</p>
-            </div>
-          </div>
-          
-          <div class="faq-item">
-            <button class="faq-question">
-              <h3>O Aquamax afeta a pressão da água?</h3>
-              <i data-feather="plus" class="faq-icon"></i>
-            </button>
-            <div class="faq-answer">
-              <p>Não. O Aquamax foi projetado para bloquear apenas o ar, sem interferir no fluxo normal da água. Você não sentirá nenhuma diferença na pressão ou qualidade da água.</p>
-            </div>
-          </div>
-        </div>
-        
-        <div class="faq-contact">
-          <p class="contact-text">
-            Ainda tem dúvidas? Entre em contato com nossa equipe
-          </p>
-          <a href="mailto:contato@aquamax.com.br" class="contact-email">
-            contato@aquamax.com.br
-          </a>
-        </div>
-      </div>
     </section>
 
     <!-- CTA Banner -->
-    <section id="cta-banner" class="cta-banner">
-      <div class="cta-overlay"></div>
-      
-      <div class="container">
-        <div class="cta-content">
-          <div class="cta-badge">
-            <i data-feather="clock"></i>
-            OFERTA POR TEMPO LIMITADO!
-          </div>
-          
-          <h2 class="cta-title">
-            Clique no botão abaixo, instale o Aquamax hoje e veja sua conta DESPENCAR em 30 dias!
-          </h2>
-          
-          <div class="cta-features">
-            <div class="cta-feature">
-              <i data-feather="check-circle"></i>
-              <p>Economia de até 60% na sua conta</p>
+    <section class="cta-banner">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Não Perca Mais Dinheiro com Sua Conta de Água</h2>
+                <p>Junte-se aos milhares de brasileiros que já estão economizando com o Aquamax</p>
+                <a href="#pricing" class="btn btn-white">GARANTIR MEU AQUAMAX AGORA</a>
+                <div class="cta-guarantee">
+                    <i data-feather="shield"></i>
+                    <span>Com garantia de 30 dias ou 200% do seu dinheiro de volta</span>
+                </div>
             </div>
-            
-            <div class="cta-feature">
-              <i data-feather="check-circle"></i>
-              <p>Instalação fácil e sem ferramentas</p>
-            </div>
-            
-            <div class="cta-feature">
-              <i data-feather="check-circle"></i>
-              <p>Garantia de 30 dias ou 200% do valor de volta</p>
-            </div>
-          </div>
-          
-          <div class="cta-buttons">
-            <a href="#pricing" class="cta-button cta-primary">
-              <i data-feather="shopping-cart"></i>
-              COMPRAR AGORA
-            </a>
-            
-            <a href="#guarantee" class="cta-button cta-outline">
-              Ver Garantia
-              <i data-feather="arrow-right"></i>
-            </a>
-          </div>
         </div>
-      </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
-      <div class="container">
-        <div class="footer-content">
-          <div class="footer-features">
-            <div class="footer-feature">
-              <i data-feather="shield-check"></i>
-              <div>
-                <h4>Compra 100% Segura</h4>
-                <p>Proteção garantida</p>
-              </div>
-            </div>
-            
-            <div class="footer-feature">
-              <i data-feather="credit-card"></i>
-              <div>
-                <h4>Pagamento Facilitado</h4>
-                <p>Parcelamento em até 12x</p>
-              </div>
-            </div>
-            
-            <div class="footer-feature">
-              <i data-feather="truck"></i>
-              <div>
-                <h4>Envio para Todo Brasil</h4>
-                <p>Entrega rápida e segura</p>
-              </div>
-            </div>
-          </div>
-          
-          <div class="footer-info">
-            <button id="back-to-top" class="back-to-top">
-              <i data-feather="arrow-up"></i>
-            </button>
-            
-            <div class="footer-brand">
-              <h3>Aquamax</h3>
-              <p>Economize água, economize dinheiro</p>
+        <div class="container">
+            <div class="footer-logo">
+                <h2>AQUAMAX</h2>
+                <p>Economize água. Economize dinheiro.</p>
             </div>
             
             <div class="footer-links">
-              <a href="#">Termos de Uso</a>
-              <a href="#">Política de Privacidade</a>
-              <a href="#">Suporte</a>
+                <div class="footer-column">
+                    <h3>Navegação</h3>
+                    <ul>
+                        <li><a href="#video">Como Funciona</a></li>
+                        <li><a href="#calculator">Calculadora</a></li>
+                        <li><a href="#testimonials">Depoimentos</a></li>
+                        <li><a href="#pricing">Preços</a></li>
+                        <li><a href="#faq">Perguntas Frequentes</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Suporte</h3>
+                    <ul>
+                        <li><a href="#">Central de Ajuda</a></li>
+                        <li><a href="#">Manual de Instalação</a></li>
+                        <li><a href="#">Política de Privacidade</a></li>
+                        <li><a href="#">Termos de Uso</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contato</h3>
+                    <ul>
+                        <li><a href="mailto:contato@aquamax.com.br">contato@aquamax.com.br</a></li>
+                        <li><a href="tel:+551199999999">(11) 9999-9999</a></li>
+                        <li>Segunda a Sexta, 9h às 18h</li>
+                    </ul>
+                </div>
             </div>
             
-            <p class="copyright">
-              © <span id="current-year"></span> Aquamax. Todos os direitos reservados.
-            </p>
-          </div>
+            <div class="footer-bottom">
+                <p>© 2023 Aquamax. Todos os direitos reservados.</p>
+                <div class="payment-methods">
+                    <span>Formas de pagamento:</span>
+                    <div class="payment-icons">
+                        <i data-feather="credit-card"></i>
+                        <i data-feather="dollar-sign"></i>
+                        <i data-feather="smartphone"></i>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
     </footer>
 
-    <script src="js/script.js"></script>
-  </body>
+    <script src="script.js"></script>
+    <script>
+      feather.replace();
+    </script>
+</body>
 </html>
