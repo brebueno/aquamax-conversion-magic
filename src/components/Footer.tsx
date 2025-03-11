@@ -1,76 +1,53 @@
 
-import React from 'react';
-import { motion } from 'framer-motion';
-import { ShieldCheck, CreditCard, Truck, ArrowUp } from 'lucide-react';
+import React from "react";
 
 const Footer = () => {
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
-  };
-  
   return (
-    <footer className="bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="py-12 border-t border-gray-100">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-            <div className="flex items-center justify-center">
-              <div className="flex items-center gap-3">
-                <ShieldCheck className="text-aqua-blue" size={24} />
-                <div>
-                  <h4 className="font-medium text-aqua-darkgray">Compra 100% Segura</h4>
-                  <p className="text-sm text-aqua-gray">Proteção garantida</p>
-                </div>
-              </div>
-            </div>
-            
-            <div className="flex items-center justify-center">
-              <div className="flex items-center gap-3">
-                <CreditCard className="text-aqua-blue" size={24} />
-                <div>
-                  <h4 className="font-medium text-aqua-darkgray">Pagamento Facilitado</h4>
-                  <p className="text-sm text-aqua-gray">Parcelamento em até 12x</p>
-                </div>
-              </div>
-            </div>
-            
-            <div className="flex items-center justify-center">
-              <div className="flex items-center gap-3">
-                <Truck className="text-aqua-blue" size={24} />
-                <div>
-                  <h4 className="font-medium text-aqua-darkgray">Envio para Todo Brasil</h4>
-                  <p className="text-sm text-aqua-gray">Entrega rápida e segura</p>
-                </div>
-              </div>
-            </div>
+    <footer className="bg-gray-900 text-white pt-12 pb-6">
+      <div className="container mx-auto px-4">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+          <div>
+            <h2 className="text-2xl font-bold mb-4">Aquamax</h2>
+            <p className="text-gray-400">Economia de água inteligente</p>
           </div>
           
-          <div className="flex flex-col items-center">
-            <motion.button
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-              onClick={scrollToTop}
-              className="mb-6 bg-aqua-lightgray p-3 rounded-full text-aqua-blue hover:bg-aqua-blue hover:text-white transition-colors"
-            >
-              <ArrowUp size={20} />
-            </motion.button>
-            
-            <div className="text-center mb-6">
-              <h3 className="text-2xl font-bold text-gradient mb-2">Aquamax</h3>
-              <p className="text-aqua-gray">Economize água, economize dinheiro</p>
-            </div>
-            
-            <div className="flex space-x-6 mb-6">
-              <a href="#" className="text-aqua-gray hover:text-aqua-blue transition-colors">Termos de Uso</a>
-              <a href="#" className="text-aqua-gray hover:text-aqua-blue transition-colors">Política de Privacidade</a>
-              <a href="#" className="text-aqua-gray hover:text-aqua-blue transition-colors">Suporte</a>
-            </div>
-            
-            <p className="text-aqua-gray/70 text-sm">
-              © {new Date().getFullYear()} Aquamax. Todos os direitos reservados.
-            </p>
+          <div>
+            <h3 className="text-lg font-semibold mb-4">Produto</h3>
+            <ul className="space-y-2">
+              <li><a href="#como-funciona" className="text-gray-400 hover:text-white transition-colors">Como Funciona</a></li>
+              <li><a href="#economia" className="text-gray-400 hover:text-white transition-colors">Calculadora</a></li>
+              <li><a href="#depoimentos" className="text-gray-400 hover:text-white transition-colors">Depoimentos</a></li>
+              <li><a href="#faq" className="text-gray-400 hover:text-white transition-colors">FAQ</a></li>
+            </ul>
+          </div>
+          
+          <div>
+            <h3 className="text-lg font-semibold mb-4">Empresa</h3>
+            <ul className="space-y-2">
+              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Sobre Nós</a></li>
+              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Blog</a></li>
+              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Contato</a></li>
+              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Parcerias</a></li>
+            </ul>
+          </div>
+          
+          <div>
+            <h3 className="text-lg font-semibold mb-4">Suporte</h3>
+            <ul className="space-y-2">
+              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Central de Ajuda</a></li>
+              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Política de Privacidade</a></li>
+              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Termos de Uso</a></li>
+              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Garantia</a></li>
+            </ul>
+          </div>
+        </div>
+        
+        <div className="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
+          <p className="text-gray-500 mb-4 md:mb-0">&copy; 2023 Aquamax - Todos os direitos reservados.</p>
+          <div className="flex space-x-6">
+            <a href="#" className="text-gray-400 hover:text-white transition-colors">Instagram</a>
+            <a href="#" className="text-gray-400 hover:text-white transition-colors">Facebook</a>
+            <a href="#" className="text-gray-400 hover:text-white transition-colors">YouTube</a>
           </div>
         </div>
       </div>

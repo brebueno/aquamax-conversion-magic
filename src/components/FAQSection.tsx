@@ -1,121 +1,58 @@
-import React, { useRef, useState } from 'react';
-import { motion, useInView } from 'framer-motion';
-import { Plus, Minus } from 'lucide-react';
+
+import React from "react";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const FAQSection = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.1 });
-  
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
-  
   const faqs = [
     {
-      question: "Como o Aquamax funciona?",
-      answer: "O Aquamax utiliza uma tecnologia patenteada que impede a entrada de ar no hidrômetro, garantindo que você só pague pela água que realmente consome. Ele é instalado diretamente na entrada de água da sua casa, antes do hidrômetro."
+      question: "Como funciona a instalação do Aquamax?",
+      answer: "A instalação é extremamente simples e leva menos de 2 minutos. Basta desrosquear o chuveiro, encaixar o Aquamax entre a saída de água e o chuveiro, e rosquear novamente. Não são necessárias ferramentas especiais."
     },
     {
-      question: "A instalação é difícil?",
-      answer: "Não! A instalação é extremamente simples e leva apenas alguns minutos. O kit vem com instruções detalhadas e você não precisa de ferramentas especiais ou conhecimentos técnicos."
+      question: "O Aquamax é compatível com qualquer chuveiro?",
+      answer: "Sim, o Aquamax é compatível com mais de 95% dos chuveiros do mercado, incluindo modelos elétricos, a gás e convencionais. O dispositivo possui rosca padrão universal."
     },
     {
-      question: "Quanto tempo leva para ver os resultados?",
-      answer: "A maioria dos clientes começa a ver resultados já na primeira conta de água após a instalação. Em média, a economia total se consolida após 2 meses de uso."
+      question: "A pressão da água vai diminuir com o Aquamax?",
+      answer: "Não! Essa é a grande vantagem do Aquamax. Nossa tecnologia patenteada mantém a sensação de pressão e conforto do seu banho enquanto reduz significativamente o consumo de água."
     },
     {
-      question: "O Aquamax funciona em qualquer tipo de encanamento?",
-      answer: "Sim! O Aquamax é compatível com todos os tipos de encanamento (PVC, metal, etc.) e com hidrômetros de diferentes marcas e modelos."
+      question: "Quanto tempo demora para receber o produto?",
+      answer: "O prazo de entrega é de 3 a 7 dias úteis para todo o Brasil. Entregamos via Correios com código de rastreamento para você acompanhar o seu pedido."
     },
     {
-      question: "Como funciona a garantia de 200% do dinheiro de volta?",
-      answer: "É simples: se você não estiver satisfeito com os resultados em até 30 dias após a compra, basta entrar em contato conosco. Devolveremos o dobro do valor que você pagou, sem fazer perguntas."
-    },
-    {
-      question: "O Aquamax afeta a pressão da água?",
-      answer: "Não. O Aquamax foi projetado para bloquear apenas o ar, sem interferir no fluxo normal da água. Você não sentirá nenhuma diferença na pressão ou qualidade da água."
+      question: "Como funciona a garantia de satisfação?",
+      answer: "Você tem 30 dias para testar o Aquamax. Se não estiver satisfeito ou não perceber uma redução de pelo menos 30% na sua conta de água, entre em contato com nosso suporte. Basta enviar o produto de volta (mesmo usado) e devolveremos 100% do valor pago."
     }
   ];
-  
-  const toggleFaq = (index: number) => {
-    if (openIndex === index) {
-      setOpenIndex(null);
-    } else {
-      setOpenIndex(index);
-    }
-  };
-  
+
   return (
-    <section 
-      ref={ref}
-      className="section bg-gradient-to-b from-blue-50 to-white"
-      id="faq"
-    >
-      <div className="max-w-4xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-12"
-        >
-          <h2 className="font-bold text-aqua-darkgray mb-4">
-            Perguntas Frequentes
-          </h2>
-          <p className="text-aqua-gray text-xl max-w-3xl mx-auto">
-            Tudo o que você precisa saber sobre o Aquamax
-          </p>
-        </motion.div>
+    <section id="faq" className="py-16 bg-white">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Perguntas Frequentes</h2>
+          <p className="text-xl text-gray-600">Tire suas dúvidas sobre o Aquamax</p>
+        </div>
         
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          className="space-y-4"
-        >
-          {faqs.map((faq, index) => (
-            <div 
-              key={index}
-              className={`glass-card transition-all duration-300 ${openIndex === index ? 'shadow-float' : ''}`}
-            >
-              <button 
-                className="w-full flex justify-between items-center p-6 text-left"
-                onClick={() => toggleFaq(index)}
-              >
-                <h3 className="text-lg font-semibold text-aqua-darkgray">{faq.question}</h3>
-                {openIndex === index ? (
-                  <Minus className="text-aqua-blue flex-shrink-0" size={20} />
-                ) : (
-                  <Plus className="text-aqua-blue flex-shrink-0" size={20} />
-                )}
-              </button>
-              
-              <div 
-                className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                  openIndex === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
-                }`}
-              >
-                <div className="p-6 pt-0 text-aqua-gray">
+        <div className="max-w-3xl mx-auto">
+          <Accordion type="single" collapsible className="space-y-4">
+            {faqs.map((faq, index) => (
+              <AccordionItem key={index} value={`item-${index}`} className="border rounded-lg p-2">
+                <AccordionTrigger className="text-lg font-medium text-gray-900 py-4 px-2">
+                  {faq.question}
+                </AccordionTrigger>
+                <AccordionContent className="text-gray-600 px-2 pb-4">
                   {faq.answer}
-                </div>
-              </div>
-            </div>
-          ))}
-        </motion.div>
-        
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.5, delay: 0.6 }}
-          className="mt-12 text-center"
-        >
-          <p className="text-aqua-gray mb-6">
-            Ainda tem dúvidas? Entre em contato com nossa equipe
-          </p>
-          <a 
-            href="mailto:contato@aquamax.com.br" 
-            className="text-aqua-blue hover:text-aqua-darkblue font-medium underline"
-          >
-            contato@aquamax.com.br
-          </a>
-        </motion.div>
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </div>
       </div>
     </section>
   );

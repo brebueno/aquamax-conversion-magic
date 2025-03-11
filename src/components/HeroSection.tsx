@@ -1,128 +1,42 @@
 
-import React from 'react';
-import { motion } from 'framer-motion';
-import { ArrowDown, ShoppingCart, Zap, Award } from 'lucide-react';
+import React from "react";
+import { Button } from "@/components/ui/button";
 
 const HeroSection = () => {
   return (
-    <motion.section 
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.6 }}
-      className="relative min-h-[95vh] flex flex-col items-center justify-center pt-10 pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden"
-    >
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute inset-0 bg-gradient-to-b from-blue-50 to-white" />
-        <div className="absolute top-0 left-0 right-0 h-60 bg-aqua-lightblue opacity-10 transform -skew-y-6" />
-        <div className="absolute bottom-0 right-0 left-0 h-40 bg-cyan-500 opacity-5 transform skew-y-6" />
+    <section className="py-16 md:py-24 bg-gradient-to-br from-blue-50 to-white">
+      <div className="container mx-auto px-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+          <div className="order-2 md:order-1">
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-4">
+              Economize até <span className="text-aqua-blue">60%</span> na sua conta de água
+            </h1>
+            <p className="text-xl text-gray-600 mb-8">
+              O Aquamax é um dispositivo revolucionário que reduz o consumo de água sem comprometer a pressão ou conforto do seu banho.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <a href="#comprar">
+                <Button className="bg-aqua-blue hover:bg-aqua-darkblue text-white px-8 py-6 text-lg w-full sm:w-auto">
+                  Comprar Agora
+                </Button>
+              </a>
+              <a href="#video">
+                <Button variant="outline" className="px-8 py-6 text-lg w-full sm:w-auto">
+                  Ver Como Funciona
+                </Button>
+              </a>
+            </div>
+          </div>
+          <div className="order-1 md:order-2">
+            <img 
+              src="/product-showcase.jpg" 
+              alt="Aquamax - Economizador de Água" 
+              className="rounded-xl shadow-2xl w-full h-auto" 
+            />
+          </div>
+        </div>
       </div>
-      
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.2, duration: 0.7 }}
-        className="max-w-4xl mx-auto text-center"
-      >
-        <div className="inline-block bg-blue-600 text-white text-sm font-bold px-4 py-2 rounded-full mb-8 animate-pulse">
-          ATENÇÃO: Últimas unidades em promoção!
-        </div>
-        
-        <h1 className="font-bold text-aqua-darkgray text-4xl sm:text-5xl md:text-6xl leading-tight mb-6">
-          <span className="text-blue-600 font-bold">VOCÊ ESTÁ PAGANDO POR AR</span> na sua conta de água
-        </h1>
-        
-        <motion.p 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4, duration: 0.7 }}
-          className="text-xl sm:text-2xl font-medium text-aqua-darkgray mb-8 max-w-3xl mx-auto"
-        >
-          O <span className="highlight-text font-semibold">Bloqueador de Ar Aquamax</span> bloqueia essa cobrança e reduz sua conta em até <span className="text-blue-600 font-bold">60%</span> em 2 meses!
-        </motion.p>
-        
-        <div className="flex flex-wrap justify-center gap-4 mt-8 mb-12">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6, duration: 0.7 }}
-            className="relative"
-          >
-            <span className="absolute -top-4 -right-4 bg-blue-600 text-white text-xs font-bold px-2 py-1 rounded-full">OFERTA!</span>
-            <a 
-              href="#pricing" 
-              className="bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-8 rounded-full shadow-xl text-lg sm:text-xl flex items-center justify-center gap-2 transition-all duration-300 transform hover:scale-105"
-            >
-              <ShoppingCart className="mr-1" size={24} />
-              COMPRAR AGORA
-            </a>
-          </motion.div>
-
-          <motion.a
-            href="#video" 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.7, duration: 0.7 }}
-            className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-full shadow-lg text-lg sm:text-xl flex items-center justify-center gap-2 transition-all duration-300"
-          >
-            <Zap className="mr-1" size={24} />
-            VER COMO FUNCIONA
-          </motion.a>
-        </div>
-
-        <div className="flex flex-wrap justify-center gap-6 mt-8">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.8, duration: 0.5 }}
-            className="flex items-center bg-green-100 px-4 py-2 rounded-full"
-          >
-            <Award className="text-green-600 mr-2" size={20} />
-            <span className="text-green-800 font-medium">Até 60% de economia</span>
-          </motion.div>
-          
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.9, duration: 0.5 }}
-            className="flex items-center bg-blue-100 px-4 py-2 rounded-full"
-          >
-            <Award className="text-blue-600 mr-2" size={20} />
-            <span className="text-blue-800 font-medium">Instalação em 5 minutos</span>
-          </motion.div>
-          
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 1, duration: 0.5 }}
-            className="flex items-center bg-cyan-100 px-4 py-2 rounded-full"
-          >
-            <Award className="text-cyan-600 mr-2" size={20} />
-            <span className="text-cyan-800 font-medium">+5.000 clientes satisfeitos</span>
-          </motion.div>
-        </div>
-      </motion.div>
-      
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.1, duration: 0.7 }}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-      >
-        <a 
-          href="#video" 
-          className="flex flex-col items-center text-aqua-gray hover:text-aqua-blue transition-colors"
-        >
-          <span className="text-sm mb-2 font-medium">Veja o vídeo</span>
-          <ArrowDown className="animate-bounce-subtle" size={24} />
-        </a>
-      </motion.div>
-      
-      <div className="absolute bottom-0 left-0 right-0">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" className="w-full h-auto">
-          <path fill="#f0f9ff" fillOpacity="0.3" d="M0,288L48,272C96,256,192,224,288,197.3C384,171,480,149,576,165.3C672,181,768,235,864,250.7C960,267,1056,245,1152,224C1248,203,1344,181,1392,170.7L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
-        </svg>
-      </div>
-    </motion.section>
+    </section>
   );
 };
 

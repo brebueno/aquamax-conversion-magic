@@ -1,127 +1,108 @@
-import React, { useState, useRef } from 'react';
-import { motion, useInView } from 'framer-motion';
-import { Calculator } from 'lucide-react';
+
+import React, { useState, useEffect } from "react";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Slider } from "@/components/ui/slider";
 
 const SavingsCalculator = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.1 });
-  const [currentBill, setCurrentBill] = useState('');
-  const [savings, setSavings] = useState<number | null>(null);
-  const [isCalculated, setIsCalculated] = useState(false);
-  
-  const calculateSavings = () => {
-    if (!currentBill) return;
+  const [pessoas, setPessoas] = useState(3);
+  const [tempo, setTempo] = useState(10);
+  const [preco, setPreco] = useState(5.5);
+  const [economia, setEconomia] = useState({ mensal: 0, anual: 0, roi: 0 });
+
+  useEffect(() => {
+    calcularEconomia();
+  }, [pessoas, tempo, preco]);
+
+  const calcularEconomia = () => {
+    // Estimativa de consumo médio
+    const consumoDiario = pessoas * tempo * 9; // litros (9L/min é a média de um chuveiro)
+    const consumoMensal = consumoDiario * 30 / 1000; // convertido para m³
     
-    const bill = parseFloat(currentBill.replace(',', '.'));
-    // Calculate approximate savings (40-60% range)
-    const minSavings = bill * 0.4;
-    const maxSavings = bill * 0.6;
-    const avgSavings = (minSavings + maxSavings) / 2;
+    // Economia com Aquamax (redução de 60%)
+    const economiaMensal = consumoMensal * 0.6 * preco;
+    const economiaAnual = economiaMensal * 12;
     
-    setSavings(avgSavings);
-    setIsCalculated(true);
+    // ROI (considerando preço médio do produto como R$ 79,90)
+    const roi = Math.ceil(79.9 / (economiaMensal / 30));
+    
+    setEconomia({
+      mensal: economiaMensal.toFixed(2),
+      anual: economiaAnual.toFixed(2),
+      roi: roi
+    });
   };
-  
+
   return (
-    <section 
-      ref={ref}
-      className="section bg-white"
-      id="calculator"
-    >
-      <div className="max-w-4xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-12"
-        >
-          <div className="inline-flex items-center bg-aqua-lightgray/70 px-4 py-1 rounded-full mb-4">
-            <Calculator className="text-aqua-blue mr-2" size={16} />
-            <span className="text-aqua-blue font-medium text-sm">Calculadora de Economia</span>
-          </div>
-          <h2 className="font-bold text-aqua-darkgray mb-4">
-            Descubra Quanto Você Vai Economizar
-          </h2>
-          <p className="text-aqua-gray text-xl max-w-3xl mx-auto">
-            Insira o valor da sua última conta de água e descubra sua economia estimada com o Aquamax
-          </p>
-        </motion.div>
+    <section id="economia" className="py-16 bg-blue-50">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Calculadora de Economia</h2>
+          <p className="text-xl text-gray-600">Veja quanto você pode economizar com o Aquamax</p>
+        </div>
         
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          className="glass-card p-8 md:p-10"
-        >
-          <div className="flex flex-col md:flex-row items-center gap-6">
-            <div className="w-full md:w-1/2">
-              <label htmlFor="bill-amount" className="block text-aqua-darkgray font-medium mb-2">
-                Valor da sua conta atual (R$)
-              </label>
-              <div className="relative">
-                <input
-                  id="bill-amount"
-                  type="text"
-                  className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-aqua-blue transition-all"
-                  placeholder="Ex: 250,00"
-                  value={currentBill}
-                  onChange={(e) => {
-                    // Allow only numbers and comma
-                    const value = e.target.value.replace(/[^0-9,]/g, '');
-                    setCurrentBill(value);
-                    setIsCalculated(false);
-                  }}
+        <div className="bg-white p-8 rounded-xl shadow-lg">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div className="lg:col-span-2 space-y-6">
+              <div>
+                <Label htmlFor="pessoas">Pessoas na casa: {pessoas}</Label>
+                <Slider 
+                  id="pessoas"
+                  min={1}
+                  max={10}
+                  step={1}
+                  value={[pessoas]}
+                  onValueChange={(value) => setPessoas(value[0])}
+                  className="my-4"
                 />
-                <button
-                  onClick={calculateSavings}
-                  className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-aqua-blue text-white px-4 py-1 rounded-md hover:bg-aqua-darkblue transition-colors"
-                >
-                  Calcular
-                </button>
+              </div>
+              
+              <div>
+                <Label htmlFor="tempo">Tempo médio de banho (minutos): {tempo}</Label>
+                <Slider 
+                  id="tempo"
+                  min={1}
+                  max={30}
+                  step={1}
+                  value={[tempo]}
+                  onValueChange={(value) => setTempo(value[0])}
+                  className="my-4"
+                />
+              </div>
+              
+              <div>
+                <Label htmlFor="preco">Preço do m³ de água (R$)</Label>
+                <Input 
+                  id="preco"
+                  type="number"
+                  min={1}
+                  max={20}
+                  step={0.5}
+                  value={preco}
+                  onChange={(e) => setPreco(parseFloat(e.target.value))}
+                  className="my-2"
+                />
               </div>
             </div>
             
-            <div className="w-full md:w-1/2 bg-aqua-lightgray/30 rounded-lg p-6 text-center">
-              {isCalculated && savings !== null ? (
-                <div className="animate-scale-in">
-                  <p className="text-aqua-gray mb-2">Sua economia estimada:</p>
-                  <h3 className="text-3xl md:text-4xl font-bold text-aqua-blue mb-2">
-                    R$ {savings.toFixed(2).replace('.', ',')}
-                    <span className="text-aqua-blue/70 text-xl">/mês</span>
-                  </h3>
-                  <p className="text-green-600 font-medium">
-                    {(savings * 12).toFixed(2).replace('.', ',')} por ano!
-                  </p>
-                </div>
-              ) : (
-                <div>
-                  <p className="text-aqua-gray mb-2">Sua economia estimada:</p>
-                  <h3 className="text-3xl md:text-4xl font-bold text-aqua-gray/30 mb-2">
-                    R$ --,--
-                    <span className="text-aqua-gray/30 text-xl">/mês</span>
-                  </h3>
-                  <p className="text-aqua-gray/50 italic">
-                    Insira o valor da sua conta para calcular
-                  </p>
-                </div>
-              )}
+            <div className="space-y-4">
+              <div className="p-4 bg-gray-50 rounded-lg">
+                <h3 className="font-semibold text-gray-600 mb-1">Economia Mensal</h3>
+                <div className="text-2xl font-bold text-blue-600">R$ {economia.mensal}</div>
+              </div>
+              
+              <div className="p-4 bg-gray-50 rounded-lg">
+                <h3 className="font-semibold text-gray-600 mb-1">Economia Anual</h3>
+                <div className="text-2xl font-bold text-blue-600">R$ {economia.anual}</div>
+              </div>
+              
+              <div className="p-4 bg-blue-600 text-white rounded-lg">
+                <h3 className="font-semibold mb-1">Retorno do Investimento</h3>
+                <div className="text-2xl font-bold">Em {economia.roi} dias</div>
+              </div>
             </div>
           </div>
-          
-          {isCalculated && savings !== null && (
-            <motion.div 
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
-              transition={{ duration: 0.3 }}
-              className="mt-6 bg-green-50 border border-green-100 rounded-lg p-4"
-            >
-              <p className="text-green-800">
-                Com o Aquamax, você economizaria aproximadamente <strong>R$ {(savings * 12).toFixed(2).replace('.', ',')}</strong> em um ano! 
-                O produto se paga em menos de um mês.
-              </p>
-            </motion.div>
-          )}
-        </motion.div>
+        </div>
       </div>
     </section>
   );
