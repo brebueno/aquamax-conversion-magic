@@ -8,7 +8,11 @@ const SavingsCalculator = () => {
   const [pessoas, setPessoas] = useState(3);
   const [tempo, setTempo] = useState(10);
   const [preco, setPreco] = useState(5.5);
-  const [economia, setEconomia] = useState({ mensal: 0, anual: 0, roi: 0 });
+  const [economia, setEconomia] = useState({
+    mensal: 0,
+    anual: 0,
+    roi: 0
+  });
 
   useEffect(() => {
     calcularEconomia();
@@ -20,15 +24,15 @@ const SavingsCalculator = () => {
     const consumoMensal = consumoDiario * 30 / 1000; // convertido para m³
     
     // Economia com Aquamax (redução de 60%)
-    const economiaMensal = consumoMensal * 0.6 * preco;
-    const economiaAnual = economiaMensal * 12;
+    const economiaMensal = Number((consumoMensal * 0.6 * preco).toFixed(2));
+    const economiaAnual = Number((economiaMensal * 12).toFixed(2));
     
     // ROI (considerando preço médio do produto como R$ 79,90)
     const roi = Math.ceil(79.9 / (economiaMensal / 30));
     
     setEconomia({
-      mensal: economiaMensal.toFixed(2),
-      anual: economiaAnual.toFixed(2),
+      mensal: economiaMensal,
+      anual: economiaAnual,
       roi: roi
     });
   };
